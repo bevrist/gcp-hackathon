@@ -1,5 +1,5 @@
 from pyexcel_ods import get_data
-import urllib.request
+import requests
 import json
 
 data = get_data("/Users/b-macbook/Desktop/krimewatch 2.ods")
