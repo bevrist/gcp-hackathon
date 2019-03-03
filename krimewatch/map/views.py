@@ -9,4 +9,7 @@ def home(request):
     return render(request, 'home.html', {})
 
 def settings(request):
-    return render(request, 'settings.html', {})
+    if request.method == "POST":
+        return render(request, 'home.html', {})
+    else:
+        return render(request, 'settings.html', {})
