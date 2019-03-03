@@ -7,7 +7,7 @@ data = get_data("/Users/b-macbook/Desktop/krimewatch 2.ods")
 
 parameters = {
   "crime": "assault",
-  "days": 30,
+  "days": 60,
   "time": -1
 }
 
