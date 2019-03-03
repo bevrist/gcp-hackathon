@@ -7,8 +7,8 @@ data = get_data("/Users/b-macbook/Desktop/krimewatch 2.ods")
 
 parameters = {
   "crime": "assault",
-  "days": 60,
-  "time": -1
+  "days": 600,
+  "time": 11
 }
 
 def generateDatapoints(parameters):
@@ -24,6 +24,13 @@ def generateDatapoints(parameters):
                 outstring += string + str(data['Sheet1'][x][4]) + "," + str(data['Sheet1'][x][5]) + "),\n"
     return outstring
 
+myfile = open("/Users/b-macbook/gcp-hackathon/api examples/heatmaps.html","r")
+myoutstring = myfile.read().replace("{{ dataPoints }}", generateDatapoints(parameters))
 
-hi = generateDatapoints(parameters)
-print(hi)
+print(myoutstring)
+
+f = open("/Users/b-macbook/gcp-hackathon/api examples/heatmaps2.html", "w")
+f.write(myoutstring)
+
+# hi = generateDatapoints(parameters)
+# print(hi)
